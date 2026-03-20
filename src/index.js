@@ -7,7 +7,14 @@ import { dirname, join } from 'path';
 config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+// GuildMembers intent needed so the bot can fetch users for DMs
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers,
+  ]
+});
 client.commands = new Collection();
 
 // Load commands
@@ -33,7 +40,7 @@ try {
   console.error('Failed to register commands:', err);
 }
 
-client.once('ready', () => {
+client.once('clientReady', () => {
   console.log(`✅ Bunni Bot online as ${client.user.tag}`);
   client.user.setActivity('🌱 Farming God Clones', { type: 4 });
 });
