@@ -27,8 +27,16 @@ export async function execute(interaction) {
         value: 'Paste your clone genes and get a step-by-step path to a god clone (3G+3Y in any order).\nExample: `/breed clones:GGYYWX GGWYYY GYGYYY`',
       },
       {
-        name: '🔒 `/code`',
-        value: 'Code lock raiding mechanics — attempt limits, damage scaling, lockout timers.',
+        name: '⏳ `/decay <tier> <hp> [coords]`',
+        value: 'Start a decay timer — bot DMs you 5 mins before and when it\'s gone. Optionally add coords.\nExample: `/decay tier:stone hp:347 coords:G14`',
+      },
+      {
+        name: '📋 `/decaylist`',
+        value: 'See all your active decay timers with time remaining.',
+      },
+      {
+        name: '❌ `/decaycancel <id>`',
+        value: 'Cancel a running decay timer by its ID.\nExample: `/decaycancel id:3`',
       },
       {
         name: '❓ `/help`',
