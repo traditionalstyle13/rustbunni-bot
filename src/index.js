@@ -8,11 +8,10 @@ config();
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// GuildMembers intent needed so the bot can fetch users for DMs
+// Only Guilds intent needed - DMs work via users.fetch without GuildMembers
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildMembers,
   ]
 });
 client.commands = new Collection();
